@@ -11,19 +11,9 @@
       <div id="navbarcollapse" class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <!-- Search-->
-          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a>
+          <li class="nav-item"><a href="index.html" class="nav-link {{#is basename "index"}}active{{/is}}">Home</a>
           </li>
-          <li class="nav-item"><a href="category.html" class="nav-link">Listings </a>
-          </li>
-          <li class="nav-item dropdown"><a id="navbarDropdownMenuLink" href="http://example.com" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Pages</a>
-            <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu"><a href="detail.html" class="dropdown-item">Listing
-                detail</a><a href="post.html" class="dropdown-item">Blog post</a><a href="text.html" class="dropdown-item">Text
-                page</a><a href="404.html" class="dropdown-item">404 - Not found</a><a href="contact.html" class="dropdown-item">Contact</a></div>
-          </li>
-          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a>
-          </li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a>
+          <li class="nav-item"><a href="about.html" class="nav-link {{#is basename "about"}}active{{/is}}">About us</a>
           </li>
         </ul><a href="#" class="btn navbar-btn btn-outline-primary mt-3 mt-lg-0 ml-lg-3">Submit a Listing</a>
       </div>

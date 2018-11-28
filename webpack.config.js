@@ -14,7 +14,8 @@ const commonChunks = ["commons", "login"];
 if (NODE_ENV === "development") commonChunks.push("reload");
 
 const entryPoints = {
-  index: "./client/index.js"
+  index: "./client/index.js",
+  about: "./client/about.js"
 };
 
 if (NODE_ENV === "development")
@@ -47,6 +48,11 @@ const plugins = [
   new HtmlWebpackPlugin({
     filename: "index.html",
     template: "./client/templates/index.hbs",
+    hash: true
+  }),
+  new HtmlWebpackPlugin({
+    filename: "about.html",
+    template: "./client/templates/about.hbs",
     hash: true
   }),
   new webpack.ProvidePlugin({
