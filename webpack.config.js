@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const DashboardPlugin = require("webpack-dashboard/plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const NODE_ENV = process.env.NODE_ENV || "development";
 console.log("NODE_ENV is %s", NODE_ENV);
@@ -28,6 +29,7 @@ const plugins = [
     },
     NODE_ENV
   }),
+  new ExtractTextPlugin("[name].css"),
   new CopyWebpackPlugin([
     {
       from: "client/assets/img",
@@ -45,11 +47,7 @@ const plugins = [
   new HtmlWebpackPlugin({
     filename: "index.html",
     template: "./client/templates/index.hbs",
-    hash: true,
-    chunks: ["index"].concat(commonChunks)
-  }),
-  new webpack.optimize.CommonsChunkPlugin({
-    name: "commons"
+    hash: true
   }),
   new webpack.ProvidePlugin({
     $: "jquery",
@@ -123,23 +121,37 @@ module.exports = {
         ]
       },
       {
-        test: /\.(scss)$/,
+        test: /\.(s?css)$/,
         use: [
-          "style-loader",
-          "raw-loader",
           {
+            // Adds CSS to the DOM by injecting a `<style>` tag
+            loader: "style-loader"
+          },
+          {
+            // Interprets `@import` and `url()` like `import/require()` and will resolve them
+            loader: "css-loader",
+            options: {
+              url: false,
+              sourceMap: true
+            }
+          },
+          {
+            // Loader for webpack to process CSS with PostCSS
+            loader: "postcss-loader",
+            options: {
+              plugins: function() {
+                return [require("autoprefixer")];
+              }
+            }
+          },
+          {
+            // Loads a SASS/SCSS file and compiles it to CSS
             loader: "sass-loader",
             options: {
-              includePaths: [
-                path.resolve(__dirname, "../node_modules/compass-mixins/lib")
-              ]
+              sourceMap: true
             }
           }
         ]
-      },
-      {
-        test: /\.(css)$/,
-        use: ["style-loader", "raw-loader"]
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
