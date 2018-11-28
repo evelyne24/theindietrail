@@ -10,13 +10,13 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const NODE_ENV = process.env.NODE_ENV || "development";
 console.log("NODE_ENV is %s", NODE_ENV);
 
-const commonChunks = ["commons", "login"];
+const commonChunks = [];
 if (NODE_ENV === "development") commonChunks.push("reload");
 
 const entryPoints = {
   index: "./client/index.js",
   about: "./client/about.js",
-  manchester: "./client/category.js",
+  manchester: "./client/category.js"
 };
 
 if (NODE_ENV === "development")
@@ -40,6 +40,10 @@ const plugins = [
     {
       from: "client/assets/fonts",
       to: "fonts"
+    },
+    {
+      from: "client/assets/json",
+      to: "json"
     }
   ]),
   new webpack.LoaderOptionsPlugin({
@@ -49,16 +53,19 @@ const plugins = [
   new HtmlWebpackPlugin({
     filename: "index.html",
     template: "./client/templates/index.hbs",
+    chunks: ["index"].concat(commonChunks),
     hash: true
   }),
   new HtmlWebpackPlugin({
     filename: "about.html",
     template: "./client/templates/about.hbs",
+    chunks: ["about"].concat(commonChunks),
     hash: true
   }),
   new HtmlWebpackPlugin({
     filename: "manchester.html",
     template: "./client/templates/manchester.hbs",
+    chunks: ["manchester"].concat(commonChunks),
     hash: true
   }),
   new webpack.ProvidePlugin({

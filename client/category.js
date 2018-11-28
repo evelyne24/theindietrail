@@ -20,3 +20,24 @@ import "jquery.cookie";
 import "bootstrap-select";
 import "./scripts/front";
 import "popper.js";
+
+import createCategoryMap from "./scripts/map-multi.js";
+
+$(function() {
+  // coordinates for the center of the map
+  var lat = 40.732346;
+  var long = -74.0014247;
+  // json file path with the markers to display on the map
+  var jsonFile = "./json/addresses.json";
+  // if using with other than default style, change the path to the colour variant
+  // of the marker. E.g. to img/map-marker-violet.png.
+  var markerImage = "img/map-marker-default.png";
+
+  $.getJSON(jsonFile)
+    .done(function(json) {
+      const map = createCategoryMap(lat, long, json, markerImage);
+    })
+    .fail(function(jqxhr, textStatus, error) {
+      console.log(error);
+    });
+});

@@ -274,29 +274,7 @@
   {{> ./partials/footer}}
   <!-- JavaScript files-->
   <!-- create your own Maps API Key for production use, this one is domain-restricted-->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
-  <script src="vendor/google-maps-infobox/infobox-lib.js"></script>
-  <script src="js/map-multi.js"></script>
-  <script>
-    $(function () {
-      // coordinates for the center of the map
-      var lat = 40.732346;
-      var long = -74.0014247;
-      // json file path with the markers to display on the map
-      var jsonFile = 'js/addresses.json';
-      // if using with other than default style, change the path to the colour variant 
-      // of the marker. E.g. to img/map-marker-violet.png.                
-      var markerImage = 'img/map-marker-default.png';
-
-      $.getJSON(jsonFile).done(function (json) {
-        map = createCategoryMap(lat, long, json, markerImage);
-      })
-        .fail(function (jqxhr, textStatus, error) {
-          console.log(error);
-        });
-    });
-
-  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4o7sFXwtFAxixz2IAmlB9fn0-HegU5gI"></script>
 </body>
 
 </html>
