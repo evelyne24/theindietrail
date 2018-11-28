@@ -24,13 +24,14 @@ import qs from "qs";
 import "./scripts/front";
 import createCategoryMap from "./scripts/map-multi.js";
 
-const place = qs.parse(window.location.search, { ignoreQueryPrefix: true })
-  .place;
+const place = qs
+  .parse(window.location.search, { ignoreQueryPrefix: true })
+  .place.replace(/\s/g, "");
 
 const itemTemplate = require("./templates/partials/dynamic/category-list-item.hbs");
 
-$.getJSON("./json/manchester.json")
-  .done(function(json) {
+$.getJSON(`./json/${place}.json`)
+  .done(json => {
     const jsonItems = json.items;
     $(".container h1").text(json.title);
     $(".container p.lead").text(json.description);
@@ -45,24 +46,24 @@ $.getJSON("./json/manchester.json")
       });
       $("#items").append(item);
     });
+
+    var lat = json.coordinates.lat;
+    var lng = json.coordinates.lng;
+    var jsonFile = `./json/addresses/${place}.json`;
+    loadMapMarkers(lat, lng, jsonFile);
   })
-  .fail(function(jqxhr, textStatus, error) {
+  .fail((j, s, error) => {
     console.log(error);
   });
 
-// coordinates for the center of the map
-var lat = 53.5072024;
-var long = -2.281417;
-// json file path with the markers to display on the map
-var jsonFile = "./json/addresses/manchester.json";
-// if using with other than default style, change the path to the colour variant
-// of the marker. E.g. to img/map-marker-violet.png.
-var markerImage = "img/map-marker-default.png";
+function loadMapMarkers(lat, lng, jsonFile) {
+  var markerImage = "img/map-marker-default.png";
 
-$.getJSON(jsonFile)
-  .done(function(json) {
-    const map = createCategoryMap(lat, long, json, markerImage);
-  })
-  .fail(function(jqxhr, textStatus, error) {
-    console.log(error);
-  });
+  $.getJSON(jsonFile)
+    .done(json => {
+      createCategoryMap(lat, lng, json, markerImage);
+    })
+    .fail((j, s, error) => {
+      console.log(error);
+    });
+}

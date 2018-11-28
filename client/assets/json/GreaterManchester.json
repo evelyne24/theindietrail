@@ -1,6 +1,10 @@
 {
   "title": "Greater Manchester",
   "description": "Testing",
+  "coordinates": {
+    "lat": "53.5072024",
+    "lng": "-2.281417"
+  },
   "items": [
     {
       "badge": "Eate & Drink",
