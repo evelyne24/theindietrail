@@ -28,7 +28,7 @@ $(function() {
   const place = qs.parse(window.location.search, { ignoreQueryPrefix: true })
     .place;
 
-  const itemTemplate = require("./templates/dynamic/category-list-item.hbs");
+  const itemTemplate = require("./templates/partials/dynamic/category-list-item.hbs");
 
   $.getJSON("./json/manchester.json")
     .done(function(json) {

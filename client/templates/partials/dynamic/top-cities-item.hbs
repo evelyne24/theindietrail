@@ -1,0 +1,12 @@
+<a href="category.html?place={{{name}}}">
+  <div class="item {{#is isHero true}}item-big{{/is}}">
+    <div class=" image"><img src="{{{photo}}}" alt="{{{name}}}"
+      class="img-fluid"></div>
+  <div class="info d-flex align-items-end">
+    <div class="content">
+      <h3>{{{name}}}</h3>
+      {{#is isHero true }}<p>{{{description}}}</p>{{/is}}
+    </div>
+  </div>
+  </div>
+</a>
