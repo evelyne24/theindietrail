@@ -8,10 +8,11 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const NODE_ENV = process.env.NODE_ENV || "development";
+const devMode = process.env.NODE_ENV !== "production";
 console.log("NODE_ENV is %s", NODE_ENV);
 
 const commonChunks = [];
-if (NODE_ENV === "development") commonChunks.push("reload");
+if (devMode) commonChunks.push("reload");
 
 const entryPoints = {
   index: "./client/index.js",
@@ -19,7 +20,7 @@ const entryPoints = {
   category: "./client/category.js"
 };
 
-if (NODE_ENV === "development")
+if (devMode)
   Object.assign(entryPoints, {
     reload: "webpack-dev-server/client?http://localhost:8081"
   });
@@ -75,7 +76,7 @@ const plugins = [
   })
 ];
 
-if (NODE_ENV === "development") {
+if (devMode) {
   plugins.push(new webpack.HotModuleReplacementPlugin());
   // enable HMR globally
 
@@ -87,10 +88,6 @@ if (NODE_ENV === "development") {
       port: 9880
     })
   );
-}
-
-if (NODE_ENV === "production") {
-  plugins.push(new UglifyJsPlugin());
 }
 
 // Webpack
@@ -128,6 +125,14 @@ module.exports = {
 
   plugins: plugins,
 
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        /* your config */
+      })
+    ]
+  },
+
   module: {
     rules: [
       {
@@ -135,7 +140,10 @@ module.exports = {
         exclude: [/node_modules/],
         use: [
           {
-            loader: "babel-loader"
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"]
+            }
           }
         ]
       },

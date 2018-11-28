@@ -8,19 +8,19 @@
     "prebuild": "npm run clean",
     "dev": "webpack-dev-server --env=dev  --mode development",
     "debug": "webpack --env=debug --progress --profile --colors",
-    "build": "NODE_ENV=production webpack --env=production --progress --optimize-minimize --profile --colors  --mode production"
+    "build": "NODE_ENV=production webpack --env=production --progress --optimize-minimize --profile --colors  --mode production",
+    "upload": "firebase deploy",
+    "deploy": "npm run clean && npm run build && npm run upload"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
     "@fancyapps/fancybox": "^3.5.2",
     "autoprefixer": "^9.3.1",
     "babel-loader": "^8.0.4",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-es2015-nostrict": "^6.6.2",
     "bootstrap": "^4.1.3",
     "bootstrap-select": "^1.13.3",
     "copy-webpack-plugin": "^4.2.3",
