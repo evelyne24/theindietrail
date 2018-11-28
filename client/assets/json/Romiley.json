@@ -1,0 +1,17 @@
+{
+  "title": "Romiley",
+  "description": "Romiley is an area of the Metropolitan Borough of Stockport, Greater Manchester, England. Historically part of Cheshire, it borders Marple, Bredbury and Woodley. In Roman times there is thought to have been a settlement along Sandy Lane. At the 2011 census, Romiley ward, which includes Compstall, Bredbury Green and a large part of Bredbury, had a population of 14,139.",
+  "coordinates": {
+    "lat": 53.4147565,
+    "lng": -2.097518
+  },
+  "items": [
+    {
+      "badge": "Eat & Drink",
+      "name": "Holcombe Tap",
+      "address": "13 Bolton Road West, Ramsbottom, BL0 9NA",
+      "description": "Holcombe Tap is a busy family run bar and kitchen. With a really friendly atmosphere and a newly refurbished interior it's the perfect place for a bite to eat or a casual drink with friends.",
+      "photo": "photo-holcombe-1.jpg"
+    }
+  ]
+}

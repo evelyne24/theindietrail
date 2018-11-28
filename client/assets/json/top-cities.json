@@ -5,6 +5,10 @@
     "isHero": true
   },
   {
+    "name": "Hebden Bridge",
+    "photo": "img/photo-hebdenbridge-1.jpg"
+  },
+  {
     "name": "Ramsbottom",
     "photo": "img/photo-ramsbottom-1.jpg"
   },
@@ -14,10 +18,6 @@
   },
   {
     "name": "Bury",
-    "photo": "img/photo-romiley-1.jpg"
-  },
-  {
-    "name": "Hebden Bridge",
     "photo": "img/photo-romiley-1.jpg"
   },
   {
