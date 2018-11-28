@@ -5,13 +5,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const DashboardPlugin = require("webpack-dashboard/plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const NODE_ENV = process.env.NODE_ENV || "development";
 const devMode = process.env.NODE_ENV !== "production";
 console.log("NODE_ENV is %s", NODE_ENV);
 
-const commonChunks = [];
+const commonChunks = ["vendor", "runtime"];
 if (devMode) commonChunks.push("reload");
 
 const entryPoints = {
@@ -33,7 +33,6 @@ const plugins = [
     },
     NODE_ENV
   }),
-  new ExtractTextPlugin("[name].css"),
   new CopyWebpackPlugin([
     {
       from: "client/assets/img",
@@ -48,6 +47,12 @@ const plugins = [
       to: "json"
     }
   ]),
+  new MiniCssExtractPlugin({
+    // Options similar to the same options in webpackOptions.output
+    // both options are optional
+    filename: "[name].css",
+    chunkFilename: "[id].css"
+  }),
   new webpack.LoaderOptionsPlugin({
     minimize: true,
     debug: false
@@ -137,7 +142,20 @@ module.exports = {
       new UglifyJsPlugin({
         /* your config */
       })
-    ]
+    ],
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          chunks: "initial",
+          name: "vendor",
+          test: /node_modules/,
+          enforce: true
+        }
+      }
+    },
+    runtimeChunk: {
+      name: "runtime"
+    }
   },
 
   module: {
@@ -158,8 +176,12 @@ module.exports = {
         test: /\.(s?css)$/,
         use: [
           {
-            // Adds CSS to the DOM by injecting a `<style>` tag
-            loader: "style-loader"
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // you can specify a publicPath here
+              // by default it use publicPath in webpackOptions.output
+              publicPath: "../"
+            }
           },
           {
             // Interprets `@import` and `url()` like `import/require()` and will resolve them
