@@ -1,1 +1,31 @@
-{}
+{
+  "title": "Ramsbottom",
+  "description": "Ramsbottom is a market town in the Metropolitan Borough of Bury, Greater Manchester, England. The population at the 2011 census was 17,872. Historically in Lancashire, it is on the River Irwell in the West Pennine Moors, 3.9 miles (6.3 km) northwest of Bury, and 12 miles (19 km) of Manchester. It's name is believed to derive from Old English ramm and botm, meaning \"valley of the ram\". It's Victorian architecture, Pennine landscape and industrial heritage, including the East Lancashire Railway, contribute to heritage tourism in the town.",
+  "coordinates": {
+    "lat": 53.6443794,
+    "lng": -2.3256324
+  },
+  "items": [
+    {
+      "badge": "Eat & Drink",
+      "name": "Holcombe Tap",
+      "address": "13 Bolton Road West, Ramsbottom, BL0 9NA",
+      "description": "Holcombe Tap is a busy family run bar and kitchen. With a really friendly atmosphere and a newly refurbished interior it's the perfect place for a bite to eat or a casual drink with friends.",
+      "photo": "photo-holcombe-1.jpg"
+    },
+    {
+      "badge": "Eat & Drink",
+      "name": "Tre Ciccio",
+      "address": "16-18 Market Pl, Ramsbottom, Bury BL0 9HT",
+      "description": "The name Tre Ciccio translates as ‘three chubby friends’. Tre Ciccio is a purveyor of traditional Italian neapolitan pizza and roast chicken.",
+      "photo": "photo-treciccio-1.jpg"
+    },
+    {
+      "badge": "Eat & Drink",
+      "name": "The Lounge",
+      "address": "2-4 Prince Street, Ramsbottom, United Kingdom, BL0 9FN",
+      "description": "The Lounge is an independant family run restaurant and cafe bar situated in the centre of the beautiful market town of Ramsbottom, offering an extensive fresh menu which is complimented by our regularly changing specials board.",
+      "photo": "photo-thelounge-1.jpg"
+    }
+  ]
+}

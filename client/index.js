@@ -21,7 +21,7 @@ import "bootstrap-select";
 import "./scripts/front";
 import "popper.js";
 
-const itemTemplate = require("./templates/partials/dynamic/top-cities-item.hbs");
+const itemTemplate = require("./templates/partials/dynamic/top-locations-item.hbs");
 
 $(function() {
   $.getJSON("./json/top-cities.json")

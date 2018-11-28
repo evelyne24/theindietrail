@@ -26,15 +26,16 @@ import createCategoryMap from "./scripts/map-multi.js";
 
 const place = qs
   .parse(window.location.search, { ignoreQueryPrefix: true })
-  .place.replace(/\s/g, "");
+  .name.replace(/\s/g, "");
 
-const itemTemplate = require("./templates/partials/dynamic/category-list-item.hbs");
+const itemTemplate = require("./templates/partials/dynamic/place-list-item.hbs");
 
 $.getJSON(`./json/${place}.json`)
   .done(json => {
     const jsonItems = json.items;
     $(".container h1").text(json.title);
-    $(".container p.lead").text(json.description);
+    $(".container p.lead:first").text(json.description);
+    $("#places-count strong").text(jsonItems.length);
 
     jsonItems.forEach((jsonItem, i) => {
       const item = itemTemplate({
@@ -57,7 +58,7 @@ $.getJSON(`./json/${place}.json`)
   });
 
 function loadMapMarkers(lat, lng, jsonFile) {
-  var markerImage = "img/map-marker-default.png";
+  var markerImage = "img/map-marker-red.png";
 
   $.getJSON(jsonFile)
     .done(json => {

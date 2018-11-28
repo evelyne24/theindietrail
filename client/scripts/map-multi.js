@@ -3,7 +3,7 @@ function createCategoryMap(lat, long, json, markerImage) {
 
   var mapCanvas = document.getElementById("category-map");
   var mapOptions = {
-    zoom: 12,
+    zoom: 14,
     scrollwheel: false,
     center: location,
     styles: [

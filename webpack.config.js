@@ -17,8 +17,8 @@ if (devMode) commonChunks.push("reload");
 const entryPoints = {
   index: "./client/index.js",
   about: "./client/about.js",
-  category: "./client/category.js",
-  detail: "./client/detail.js"
+  location: "./client/location.js",
+  place: "./client/place.js"
 };
 
 if (devMode)
@@ -65,15 +65,15 @@ const plugins = [
     hash: true
   }),
   new HtmlWebpackPlugin({
-    filename: "category.html",
-    template: "./client/templates/category.hbs",
-    chunks: ["category"].concat(commonChunks),
+    filename: "location.html",
+    template: "./client/templates/location.hbs",
+    chunks: ["location"].concat(commonChunks),
     hash: true
   }),
   new HtmlWebpackPlugin({
-    filename: "detail.html",
-    template: "./client/templates/detail.hbs",
-    chunks: ["detail"].concat(commonChunks),
+    filename: "place.html",
+    template: "./client/templates/place.hbs",
+    chunks: ["place"].concat(commonChunks),
     hash: true
   }),
   new webpack.ProvidePlugin({

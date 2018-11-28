@@ -1,1 +1,54 @@
-[]
+[
+  {
+    "_id": "0",
+    "index": 0,
+    "isActive": true,
+    "icon": "http://placehold.it/32x32",
+    "logo": "http://placehold.it/32x32",
+    "image": "img/photo-holcombe-1.jpg",
+    "link": "place.html?name=Holcombe",
+    "url": "https://holcombetap.co.uk/",
+    "name": "Holcombe",
+    "phone": "01706 821184",
+    "address": "13 Bolton Rd W, Ramsbottom, Bury BL0 9NA",
+    "about": "Holcombe Tap is a busy family run bar and kitchen. With a really friendly atmosphere and a newly refurbished interior it's the perfect place for a bite to eat or a casual drink with friends.\r\n",
+    "latitude": 53.6424214,
+    "longitude": -2.3248999,
+    "tags": ["bar", "kitchen"]
+  },
+  {
+    "_id": "1",
+    "index": 1,
+    "isActive": true,
+    "icon": "http://placehold.it/32x32",
+    "logo": "http://placehold.it/32x32",
+    "image": "img/photo-treciccio-1.jpg",
+    "link": "place.html?name=Tre Ciccio",
+    "url": "https://www.treciccio.co.uk/",
+    "name": "Tre Ciccio",
+    "phone": "01706 825070",
+    "address": "16-18 Market Pl, Ramsbottom, Bury BL0 9HT",
+    "about": "The name Tre Ciccio translates as ‘three chubby friends’. Tre Ciccio is a purveyor of traditional Italian neapolitan pizza and roast chicken.\r\n",
+    "latitude": 53.6490508,
+    "longitude": -2.3201729,
+    "tags": ["Italian", "restaurant"]
+  },
+  {
+    "_id": "2",
+    "index": 2,
+    "isActive": true,
+    "icon": "http://placehold.it/32x32",
+    "logo": "http://placehold.it/32x32",
+    "image": "img/photo-thelounge-1.jpg",
+    "link": "place.html?name=The Lounge",
+    "url": "http://theloungeramsbottom.co.uk/",
+    "name": "The Lounge",
+    "email": "theloungeramsbottom@hotmail.com",
+    "phone": "01706 828392",
+    "address": "2-4 Prince Street, Ramsbottom, United Kingdom, BL0 9FN",
+    "about": "The Lounge is an independant family run restaurant and cafe bar situated in the centre of the beautiful market town of Ramsbottom, offering an extensive fresh menu which is complimented by our regularly changing specials board.\r\n",
+    "latitude": 53.6479528,
+    "longitude": -2.3194232,
+    "tags": ["family", "restaurant"]
+  }
+]
