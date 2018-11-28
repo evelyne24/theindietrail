@@ -17,7 +17,8 @@ if (devMode) commonChunks.push("reload");
 const entryPoints = {
   index: "./client/index.js",
   about: "./client/about.js",
-  category: "./client/category.js"
+  category: "./client/category.js",
+  detail: "./client/detail.js"
 };
 
 if (devMode)
@@ -67,6 +68,12 @@ const plugins = [
     filename: "category.html",
     template: "./client/templates/category.hbs",
     chunks: ["category"].concat(commonChunks),
+    hash: true
+  }),
+  new HtmlWebpackPlugin({
+    filename: "detail.html",
+    template: "./client/templates/detail.hbs",
+    chunks: ["detail"].concat(commonChunks),
     hash: true
   }),
   new webpack.ProvidePlugin({
