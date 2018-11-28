@@ -16,7 +16,7 @@ if (NODE_ENV === "development") commonChunks.push("reload");
 const entryPoints = {
   index: "./client/index.js",
   about: "./client/about.js",
-  manchester: "./client/category.js"
+  category: "./client/category.js"
 };
 
 if (NODE_ENV === "development")
@@ -63,9 +63,9 @@ const plugins = [
     hash: true
   }),
   new HtmlWebpackPlugin({
-    filename: "manchester.html",
-    template: "./client/templates/manchester.hbs",
-    chunks: ["manchester"].concat(commonChunks),
+    filename: "category.html",
+    template: "./client/templates/category.hbs",
+    chunks: ["category"].concat(commonChunks),
     hash: true
   }),
   new webpack.ProvidePlugin({

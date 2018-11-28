@@ -45,6 +45,7 @@
     "owl.carousel2": "^2.2.1",
     "popper.js": "^1.14.5",
     "postcss-loader": "^3.0.0",
+    "qs": "^6.6.0",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
