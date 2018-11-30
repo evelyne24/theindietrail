@@ -1,0 +1,43 @@
+{
+  "badge": "Eat & Drink",
+  "name": "Tre Ciccio",
+  "address": "16-18 Market Pl, Ramsbottom, Bury BL0 9HT",
+  "description": "The name Tre Ciccio translates as ‘three chubby friends’. Tre Ciccio is a purveyor of traditional Italian neapolitan pizza and roast chicken.",
+  "photo": "img/photo-treciccio-1.jpg",
+  "website": "https://www.treciccio.co.uk/",
+  "phone": "01706 825070",
+  "coordinates": {
+    "lat": 53.6490508,
+    "lng": -2.3201729
+  },
+  "opening_hours": [
+    {
+      "day": "Monday",
+      "slots": ["10am-9pm"]
+    },
+    {
+      "day": "Tuesday",
+      "slots": ["10am-10pm"]
+    },
+    {
+      "day": "Wednesday",
+      "slots": ["10am-10pm"]
+    },
+    {
+      "day": "Thursday",
+      "slots": ["10am-10pm"]
+    },
+    {
+      "day": "Friday",
+      "slots": ["10am-10:30pm"]
+    },
+    {
+      "day": "Saturday",
+      "slots": ["10am-10:30pm"]
+    },
+    {
+      "day": "Sunday",
+      "slots": ["10am-10pm"]
+    }
+  ]
+}

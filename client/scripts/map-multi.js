@@ -1,4 +1,4 @@
-function createCategoryMap(lat, long, json, markerImage) {
+function createLocationMap(lat, long, json, markerImage) {
   var location = new google.maps.LatLng(lat, long);
 
   var mapCanvas = document.getElementById("category-map");
@@ -179,4 +179,4 @@ function drawInfobox(infoboxContent, json, i) {
   return ibContent;
 }
 
-module.exports = createCategoryMap;
+module.exports = createLocationMap;

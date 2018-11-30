@@ -22,7 +22,7 @@ import "popper.js";
 import qs from "qs";
 
 import "./scripts/front";
-import createCategoryMap from "./scripts/map-multi.js";
+import createLocationMap from "./scripts/map-multi.js";
 
 $(function() {
   const place = qs
@@ -64,7 +64,7 @@ function loadMapMarkers(lat, lng, jsonFile) {
 
   $.getJSON(jsonFile)
     .done(json => {
-      createCategoryMap(lat, lng, json, markerImage);
+      createLocationMap(lat, lng, json, markerImage);
     })
     .fail((j, s, error) => {
       console.log(error);

@@ -1,4 +1,4 @@
-function createDetailMap(lat, long, markerImage) {
+function createPlaceMap(lat, long, markerImage) {
 
     var location = new google.maps.LatLng(lat, long);
 
@@ -35,4 +35,5 @@ function createDetailMap(lat, long, markerImage) {
 
 }
 
+module.exports = createPlaceMap;
 

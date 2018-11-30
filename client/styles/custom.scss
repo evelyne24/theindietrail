@@ -30,3 +30,23 @@ section.services {
 #about ul li {
   margin-left: 20px;
 }
+
+.darken {
+  position: relative;
+}
+
+.darken > .tint {
+  z-index: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  & + .container {
+    z-index: 1;
+  }
+}
