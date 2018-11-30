@@ -1,0 +1,44 @@
+{
+  "badge": "See & Do",
+  "name": "The Afghan Rug Shop",
+  "address": "7 Market Street, Hebden Bridge HX7 6EU",
+  "description": "The Afghan Rug Shop in Hebden Bridge can call itself unique for several reasons. It’s believed to be the only rug shop outside Afghanistan itself that sells rugs solely from that country.",
+  "photo": "img/photo-theafghanrugshop-1.jpg",
+  "website": "https://theafghanrugshop.co.uk/",
+  "email": "enquiries@theafghanrugshop.co.uk",
+  "phone": "01422 843331",
+  "coordinates": {
+    "lat": 53.7412282,
+    "lng": -2.0181317
+  },
+  "opening_hours": [
+    {
+      "day": "Monday",
+      "slots": ["10am-5pm"]
+    },
+    {
+      "day": "Tuesday",
+      "slots": ["10am-5pm"]
+    },
+    {
+      "day": "Wednesday",
+      "slots": ["10am-5pm"]
+    },
+    {
+      "day": "Thursday",
+      "slots": ["10am-5pm"]
+    },
+    {
+      "day": "Friday",
+      "slots": ["10am-5pm"]
+    },
+    {
+      "day": "Saturday",
+      "slots": ["10am-5pm"]
+    },
+    {
+      "day": "Sunday",
+      "slots": ["10am-5pm"]
+    }
+  ]
+}

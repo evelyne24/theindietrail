@@ -1,16 +1,15 @@
 [
   {
     "name": "Hebden Bridge",
-    "photo": "img/photo-hebdenbridge-1.jpg",
-    "isHero": true
-  },
-  {
-    "name": "Marple",
-    "photo": "img/photo-marple-1.jpg"
+    "photo": "img/photo-hebdenbridge-1.jpg"
   },
   {
     "name": "Ramsbottom",
     "photo": "img/photo-ramsbottom-1.jpg"
+  },
+  {
+    "name": "Marple",
+    "photo": "img/photo-marple-1.jpg"
   },
   {
     "name": "Romiley",

@@ -27,7 +27,8 @@ $(function() {
     .done(json => {
       json.forEach((jsonElem, i) => {
         const elem = itemTemplate(jsonElem);
-        if (jsonElem.isHero) {
+
+        if (i == 0) {
           const parent = $("#top-items");
           parent.prepend($('<div class="col-lg-6"></div>').append(elem));
         } else if (i <= 4) {
@@ -37,6 +38,12 @@ $(function() {
           const parent = $("#second-row");
           parent.append($('<div class="col-md-3"></div>').append(elem));
         }
+
+        const name = jsonElem.name;
+        const file = name.replace(/\s/g, "");
+        $.getJSON(`./json/${file}.json`).fail((p1, p2, err) => {
+          $(`a[href*="location.html?name=${name}"]`).prop("href", "#");
+        });
       });
     })
     .fail((p1, p2, error) => {

@@ -47,6 +47,12 @@ $(function() {
           photo: jsonItem.photo
         });
         $("#items").append(item);
+
+        const name = jsonItem.name;
+        const file = name.replace(/\s/g, "");
+        $.getJSON(`./json/places/${file}.json`).fail((p1, p2, err) => {
+          $(`a[href*="place.html?name=${name}"]`).prop("href", "#");
+        });
       });
 
       var lat = json.coordinates.lat;
