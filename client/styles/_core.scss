@@ -1,4 +1,3 @@
-
 /*
 =========================================
 =========================================
@@ -17,7 +16,7 @@
 // custom mixins
 @import "modules/mixins-custom";
 // general styling
-@import "modules/general"; 
+@import "modules/general";
 // blog page styling
 @import "modules/blog-page";
 // listing page styling
@@ -28,6 +27,8 @@
 @import "modules/contact";
 // demo styling
 @import "modules/demo";
+// modal
+@import "modules/modal";
 
 // bootstrap base stylesheet overrides
 @import "theme";

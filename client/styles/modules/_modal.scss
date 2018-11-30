@@ -1,0 +1,41 @@
+.modal {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal button.close {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  color: $white;
+  text-align: center;
+  background-color: $templateColour;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 1;
+  z-index: 100;
+}
+
+.modal-content {
+  border-radius: 0;
+}
+
+.modal-dialog {
+  .modal-header,
+  .modal-body {
+    padding: 0px 0px;
+    border: none;
+    background-color: #e9f5f4;
+  }
+
+  .modal-header {
+    .close {
+      padding: 0;
+      margin: 0;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
