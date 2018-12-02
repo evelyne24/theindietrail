@@ -24,49 +24,27 @@ import qs from "qs";
 
 import "./scripts/front";
 import createDetailMap from "./scripts/map.js";
+import firebase from "./scripts/firebase";
 
-$(function() {
-  const place = qs
-    .parse(window.location.search, { ignoreQueryPrefix: true })
-    .name.replace(/\s/g, "");
+const params = qs.parse(window.location.search, { ignoreQueryPrefix: true });
+const location = params.location;
+const slug = params.name;
 
-  const openingHoursTemplate = require("./templates/partials/dynamic/place-opening-hours.hbs");
+const openingHoursTemplate = require("./templates/partials/dynamic/place-opening-hours.hbs");
+const markerImage = "img/map-marker-red.png";
 
-  $.getJSON(`./json/places/${place}.json`)
-    .done(json => {
-      $("section.hero").css("background", `url('${json.photo}')`);
-      $("#badge").text(json.badge);
-      $("#name").text(json.name);
-      $("#address").text(json.address);
-      $("#description").text(json.description);
-      if (json.opening_hours) {
-        json.opening_hours.forEach(data => {
-          $("div.days").append(
-            openingHoursTemplate({
-              day: data.day,
-              time: data.slots[0]
-            })
-          );
-        });
-      }
-      setContact(json, "phone");
-      setContact(json, "website");
-      setContact(json, "email");
-      setContact(json, "facebook");
-      setContact(json, "twitter");
-      setContact(json, "instagram");
-
-      var lat = json.coordinates.lat;
-      var lng = json.coordinates.lng;
-      const markerImage = "img/map-marker-red.png";
-      createDetailMap(lat, lng, markerImage);
-    })
-    .fail((j, s, error) => {
-      console.log(error);
+async function getPlace(location, slug) {
+  return firebase
+    .database()
+    .ref(`/places/${location}/${slug}`)
+    .once("value")
+    .then(snapshot => snapshot.val() || {})
+    .catch(error => {
+      console.error(error);
     });
-});
+}
 
-function setContact(json, field) {
+function displayContact(json, field) {
   const elem = $(`#${field}`);
   const value = `${json[field]}`;
   if (json[field]) {
@@ -82,3 +60,37 @@ function setContact(json, field) {
     elem.hide();
   }
 }
+
+function displayPlace(place) {
+  $("section.hero").css("background", `url('${place.photo}')`);
+  $("#badge").text(place.badge);
+  $("#name").text(place.name);
+  $("#address").text(place.address);
+  $("#description").text(place.description);
+  if (place.opening_hours) {
+    place.opening_hours.forEach(data => {
+      $("div.days").append(
+        openingHoursTemplate({
+          day: data.day,
+          time: data.slots[0]
+        })
+      );
+    });
+  }
+  displayContact(place, "phone");
+  displayContact(place, "website");
+  displayContact(place, "email");
+  displayContact(place, "facebook");
+  displayContact(place, "twitter");
+  displayContact(place, "instagram");
+  if (place.coordinates) {
+    createDetailMap(place.coordinates.lat, place.coordinates.lng, markerImage);
+  }
+}
+
+async function getAndRun() {
+  const place = await getPlace(location, slug);
+  displayPlace(place);
+}
+
+getAndRun();

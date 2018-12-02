@@ -1,0 +1,183 @@
+{
+  "locations": {
+    "hebden-bridge": {
+      "name": "Hebden Bridge",
+      "description": "Hebden Bridge is a market town in the Upper Calder Valley in West Yorkshire, England. It is 8 miles west of Halifax and 14 miles north-east of Rochdale, at the confluence of the River Calder and the Hebden Water. The town is the largest settlement in the civil parish of Hebden Royd.",
+      "coordinates": {
+        "lat": 53.7453116,
+        "lng": -2.0298975
+      },
+      "photo": "https://firebasestorage.googleapis.com/v0/b/indie-trail.appspot.com/o/locations%2Fphoto-hebdenbridge-1.jpg?alt=media&token=a821589c-d8a5-42bc-9650-164acd772ee3"
+    },
+    "ramsbottom": {
+      "name": "Ramsbottom",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/indie-trail.appspot.com/o/locations%2Fphoto-ramsbottom-1.jpg?alt=media&token=b0fe2b7e-c983-4312-8be7-d9ed7c6ed952",
+      "description": "Ramsbottom is a market town in the Metropolitan Borough of Bury, Greater Manchester, England. The population at the 2011 census was 17,872. Historically in Lancashire, it is on the River Irwell in the West Pennine Moors, 3.9 miles (6.3 km) northwest of Bury, and 12 miles (19 km) of Manchester. It's name is believed to derive from Old English ramm and botm, meaning \"valley of the ram\". It's Victorian architecture, Pennine landscape and industrial heritage, including the East Lancashire Railway, contribute to heritage tourism in the town.",
+      "coordinates": {
+        "lat": 53.6443794,
+        "lng": -2.3256324
+      }
+    },
+    "marple": {
+      "name": "Marple",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/indie-trail.appspot.com/o/locations%2Fphoto-marple-1.jpg?alt=media&token=86c14675-5e0e-4817-8bf4-b11f310761c8"
+    },
+    "romiley": {
+      "name": "Romiley",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/indie-trail.appspot.com/o/locations%2Fphoto-romiley-1.jpg?alt=media&token=942eb899-f8f1-455c-a1f3-bd69f1b4d05c"
+    },
+    "bury": {
+      "name": "Bury",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/indie-trail.appspot.com/o/locations%2Fphoto-bury-1.jpg?alt=media&token=aa4b13da-ed78-4fd4-ab10-41c1cf5993dc"
+    },
+    "rochdale": {
+      "name": "Rochdale",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/indie-trail.appspot.com/o/locations%2Fphoto-rochdale-1.jpg?alt=media&token=540d6190-23e0-4175-9ee7-ef885e0a5fb9"
+    },
+    "prestbury": {
+      "name": "Prestbury",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/indie-trail.appspot.com/o/locations%2Fphoto-prestbury-1.jpg?alt=media&token=3ee47bc8-0515-46ee-b5a9-36fcc935f15f"
+    },
+    "levenshulme": {
+      "name": "Levenshulme",
+      "photo": "https://firebasestorage.googleapis.com/v0/b/indie-trail.appspot.com/o/locations%2Fphoto-levenshulme-1.jpg?alt=media&token=a6403f72-3a14-4f7b-8402-9a577b2988e4"
+    }
+  },
+  "places": {
+    "hebden-bridge": {
+      "the-afghan-rug-shop": {
+        "badge": "See & Do",
+        "name": "The Afghan Rug Shop",
+        "address": "7 Market Street, Hebden Bridge HX7 6EU",
+        "description": "The Afghan Rug Shop in Hebden Bridge can call itself unique for several reasons. It’s believed to be the only rug shop outside Afghanistan itself that sells rugs solely from that country.",
+        "photo": "https://firebasestorage.googleapis.com/v0/b/indie-trail.appspot.com/o/places%2Fhebden-bridge%2Fphoto-theafghanrugshop-1.jpg?alt=media&token=8ddcef6d-a12c-491e-b5b7-b38925f57057",
+        "website": "https://theafghanrugshop.co.uk/",
+        "email": "enquiries@theafghanrugshop.co.uk",
+        "phone": "01422 843331",
+        "coordinates": {
+          "lat": 53.7412282,
+          "lng": -2.0181317
+        },
+        "opening_hours": [
+          {
+            "day": "Monday",
+            "slots": ["10am-5pm"]
+          },
+          {
+            "day": "Tuesday",
+            "slots": ["10am-5pm"]
+          },
+          {
+            "day": "Wednesday",
+            "slots": ["10am-5pm"]
+          },
+          {
+            "day": "Thursday",
+            "slots": ["10am-5pm"]
+          },
+          {
+            "day": "Friday",
+            "slots": ["10am-5pm"]
+          },
+          {
+            "day": "Saturday",
+            "slots": ["10am-5pm"]
+          },
+          {
+            "day": "Sunday",
+            "slots": ["10am-5pm"]
+          }
+        ]
+      },
+      "totally-awesome": {
+        "badge": "See & Do",
+        "name": "Totally Awesome",
+        "address": "Market St, Hebden Bridge HX7 6EU",
+        "description": "Based in vibrant Hebden Bridge and the Historic Piece Hall in Halifax, Totally Awesome offers a fun shopping experience allowing you to try many of the products on offer, products which often can’t be found on the high street.",
+        "photo": "https://firebasestorage.googleapis.com/v0/b/indie-trail.appspot.com/o/places%2Fhebden-bridge%2Fphoto-totallyawesome-1.jpg?alt=media&token=5ae42b2b-e3fd-4750-a4e0-3f1e7a0cb178",
+        "coordinates": {
+          "lat": 53.7414051,
+          "lng": -2.0181105
+        }
+      },
+      "the-egg-factory": {
+        "badge": "See & Do",
+        "name": "The Egg Factory",
+        "address": "Windsor Works Adj. Unit,, Victoria Rd, Hebden Bridge HX7 8JX",
+        "description": "The Egg Factory is a creative co-working space in Hebden Bridge, West Yorkshire. Become part of our community today and work alongside like-minded creatives to help your small business flourish.",
+        "photo": "https://firebasestorage.googleapis.com/v0/b/indie-trail.appspot.com/o/places%2Fhebden-bridge%2Fphoto-theeggfactory-1.jpg?alt=media&token=3e527131-f3ef-4344-9845-9a34f30e1a0d",
+        "coordinates": {
+          "lat": 53.745724,
+          "lng": -2.0150737
+        }
+      }
+    },
+    "ramsbottom": {
+      "holcombe-tap": {
+        "badge": "Eat & Drink",
+        "name": "Holcombe Tap",
+        "address": "13 Bolton Road West, Ramsbottom, BL0 9NA",
+        "description": "Holcombe Tap is a busy family run bar and kitchen. With a really friendly atmosphere and a newly refurbished interior it's the perfect place for a bite to eat or a casual drink with friends.",
+        "photo": "https://firebasestorage.googleapis.com/v0/b/indie-trail.appspot.com/o/places%2Framsbottom%2Fphoto-holcombe-1.jpg?alt=media&token=3ace55c3-e876-445a-bf18-224d91b95282",
+        "coordinates": {
+          "lat": 53.6424214,
+          "lng": -2.3248999
+        }
+      },
+      "tre-ciccio": {
+        "badge": "Eat & Drink",
+        "name": "Tre Ciccio",
+        "address": "16-18 Market Pl, Ramsbottom, Bury BL0 9HT",
+        "description": "The name Tre Ciccio translates as ‘three chubby friends’. Tre Ciccio is a purveyor of traditional Italian neapolitan pizza and roast chicken.",
+        "photo": "https://firebasestorage.googleapis.com/v0/b/indie-trail.appspot.com/o/places%2Framsbottom%2Fphoto-treciccio-1.jpg?alt=media&token=821fd3f9-181d-424f-bbdc-bec511770cab",
+        "website": "https://www.treciccio.co.uk/",
+        "phone": "01706 825070",
+        "coordinates": {
+          "lat": 53.6490508,
+          "lng": -2.3201729
+        },
+        "opening_hours": [
+          {
+            "day": "Monday",
+            "slots": ["10am-9pm"]
+          },
+          {
+            "day": "Tuesday",
+            "slots": ["10am-10pm"]
+          },
+          {
+            "day": "Wednesday",
+            "slots": ["10am-10pm"]
+          },
+          {
+            "day": "Thursday",
+            "slots": ["10am-10pm"]
+          },
+          {
+            "day": "Friday",
+            "slots": ["10am-10:30pm"]
+          },
+          {
+            "day": "Saturday",
+            "slots": ["10am-10:30pm"]
+          },
+          {
+            "day": "Sunday",
+            "slots": ["10am-10pm"]
+          }
+        ]
+      },
+      "the-lounge": {
+        "badge": "Eat & Drink",
+        "name": "The Lounge",
+        "address": "2-4 Prince Street, Ramsbottom, United Kingdom, BL0 9FN",
+        "description": "The Lounge is an independant family run restaurant and cafe bar situated in the centre of the beautiful market town of Ramsbottom, offering an extensive fresh menu which is complimented by our regularly changing specials board.",
+        "photo": "https://firebasestorage.googleapis.com/v0/b/indie-trail.appspot.com/o/places%2Framsbottom%2Fphoto-thelounge-1.jpg?alt=media&token=e1921989-7fdf-4753-890c-9b4e49db51b1",
+        "coordinates": {
+          "lat": 53.6479528,
+          "lng": -2.3194232
+        }
+      }
+    }
+  }
+}

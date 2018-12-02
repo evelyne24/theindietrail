@@ -61,7 +61,7 @@ function createLocationMap(lat, long, json, markerImage) {
 
   for (var i = 0; i < json.length; i++) {
     marker = new google.maps.Marker({
-      position: new google.maps.LatLng(json[i].latitude, json[i].longitude),
+      position: new google.maps.LatLng(json[i].coordinates.lat, json[i].coordinates.lng),
       map: map,
       icon: markerImage
     });
@@ -115,8 +115,8 @@ function drawInfobox(infoboxContent, json, i) {
     title = "";
   }
 
-  if (json[i].about) {
-    var about = '<p class="about">' + json[i].about + "</p>";
+  if (json[i].description) {
+    var about = '<p class="about">' + json[i].description + "</p>";
   } else {
     about = "";
   }
@@ -129,10 +129,10 @@ function drawInfobox(infoboxContent, json, i) {
   } else {
     address = "";
   }
-  if (json[i].image) {
+  if (json[i].photo) {
     var image =
       '<div class="image" style="background-image: url(\'' +
-      json[i].image +
+      json[i].photo +
       "')\"></div>";
   } else {
     image = '<div class="image"></div>';
@@ -154,8 +154,8 @@ function drawInfobox(infoboxContent, json, i) {
     phone = "";
   }
 
-  if (json[i].url) {
-    var url = '<a href="' + json[i].url + '">' + json[i].url + "</a><br>";
+  if (json[i].website) {
+    var url = '<a href="' + json[i].url + '">' + json[i].website + "</a><br>";
   } else {
     url = "";
   }

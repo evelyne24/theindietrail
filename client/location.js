@@ -23,56 +23,78 @@ import qs from "qs";
 
 import "./scripts/front";
 import createLocationMap from "./scripts/map-multi.js";
+import firebase from "./scripts/firebase";
 
-$(function() {
-  const place = qs
-    .parse(window.location.search, { ignoreQueryPrefix: true })
-    .name.replace(/\s/g, "");
+const placeTemplate = require("./templates/partials/dynamic/place-list-item.hbs");
+const slug = qs.parse(window.location.search, { ignoreQueryPrefix: true }).name;
+const markerImage = "img/map-marker-red.png";
 
-  const itemTemplate = require("./templates/partials/dynamic/place-list-item.hbs");
+function displayLocation({ name, description }) {
+  $(".container h1").text(name);
+  $(".container p.lead:first").text(description);
+}
 
-  $.getJSON(`./json/${place}.json`)
-    .done(json => {
-      const jsonItems = json.items;
-      $(".container h1").text(json.title);
-      $(".container p.lead:first").text(json.description);
-      $("#places-count strong").text(jsonItems.length);
+function displayPlace(place) {
+  $("#items").append(placeTemplate(place));
+}
 
-      jsonItems.forEach((jsonItem, i) => {
-        const item = itemTemplate({
-          badge: jsonItem.badge,
-          name: jsonItem.name,
-          address: jsonItem.address,
-          description: jsonItem.description,
-          photo: jsonItem.photo
-        });
-        $("#items").append(item);
+function displayPlaces(location, places) {
+  $("#places-count strong").text(places.length);
+  places.forEach(displayPlace);
+  const mapPlaces = places
+    .filter(place => place.coordinates)
+    .map((place, i) =>
+      Object.assign(place, {
+        _id: place.slug,
+        index: i,
+        isActive: true,
+        icon: "http://placehold.it/32x32",
+        logo: "http://placehold.it/32x32",
+        link: `place.html?location=${location.slug}&name=${place.slug}`
+      })
+    );
+  createLocationMap(
+    location.coordinates.lat,
+    location.coordinates.lng,
+    mapPlaces,
+    markerImage
+  );
+}
 
-        const name = jsonItem.name;
-        const file = name.replace(/\s/g, "");
-        $.getJSON(`./json/places/${file}.json`).fail((p1, p2, err) => {
-          $(`a[href*="place.html?name=${name}"]`).prop("href", "#");
-        });
-      });
-
-      var lat = json.coordinates.lat;
-      var lng = json.coordinates.lng;
-      var jsonFile = `./json/addresses/${place}.json`;
-      loadMapMarkers(lat, lng, jsonFile);
+async function getPlaces(location) {
+  return firebase
+    .database()
+    .ref(`/places/${location.slug}`)
+    .once("value")
+    .then(snapshot => {
+      const places = snapshot.val() || [];
+      for (let k in places) {
+        if (places.hasOwnProperty(k)) places[k].slug = k;
+      }
+      return Object.values(places);
     })
-    .fail((j, s, error) => {
-      console.log(error);
-    });
-});
-
-function loadMapMarkers(lat, lng, jsonFile) {
-  var markerImage = "img/map-marker-red.png";
-
-  $.getJSON(jsonFile)
-    .done(json => {
-      createLocationMap(lat, lng, json, markerImage);
-    })
-    .fail((j, s, error) => {
-      console.log(error);
+    .catch(error => {
+      console.error(error);
     });
 }
+
+async function getLocation(slug) {
+  return firebase
+    .database()
+    .ref(`/locations/${slug}`)
+    .once("value")
+    .then(snapshot => Object.assign(snapshot.val(), { slug }))
+    .catch(error => {
+      console.error(error);
+    });
+}
+
+async function getAndRun() {
+  const location = await getLocation(slug);
+  displayLocation(location);
+  const places = await getPlaces(location);
+  places.forEach(place => Object.assign(place, { location: slug }));
+  displayPlaces(location, places);
+}
+
+getAndRun();
